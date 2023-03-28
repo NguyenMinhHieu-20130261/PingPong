@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ping Pong Game</title>
+  <link rel="stylesheet" href="game.css">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<!--  màn hình bắt đầu-->
+  <div id="start">
+    <h1>Ping Pong Game</h1>
+    <button id="player-btn">2 Players</button>
+    <button id="bot-btn">Vs Bot</button>
+  <!--    chọn màn-->
+    <select id="game-mode">
+      <option id="level-1" value="lvl1">Level 1</option>
+      <option id="level-2" value="lvl2">Level 2</option>
+      <option id="level-3" value="lvl3">Level 3</option>
+      <option id="level-4" value="lvl4">Level 4</option>
+      <option id="level-5" value="lvl5">Level 5</option>
+    </select>
+    <button id="brick-btn">Brick Game</button>
+    <button id="tutorial-btn">Tutorial</button>
+  </div>
+  <!--game-->
+  <canvas id="game"></canvas>
+  <!--  màn hình kết thúc game (PingPong)-->
+  <div id="end" style="display: none">
+    <h1>Game Over</h1>
+    <p id="winner"></p>
+    <button id="restart-btn">Restart Game</button>
+    <button id="return-btn">Return to Menu</button>
+  </div>
+  <!--  màn hình kết thúc game (Brick Breaker)-->
+  <div id="end-brick" style="display: none">
+    <h1>Game Over</h1>
+    <p id="result"></p>
+    <button id="restart-brick">Restart Game</button>
+    <button id="return-brick">Return to Menu</button>
+  </div>
+  <div id="tutorial-menu" style="display: none">
+    <h1 style="text-align: center">How to play</h1>
+    <div id="pong-tutorial">
+      <h2> Ping Pong Game</h2>
+      <div id="smol-container">
+        <div id="player-mod-tut" class="smol-tutorial">
+          <div class= "mode-game" style="width: 100%;">
+            <h3> <ins>Mode Player vs Player</ins></h3>
+          <p> Ở chế độ này sẽ có 2 người chơi
+            <br>
+            Mục tiêu: ăn được 5 điểm từ đối phương
+          </p>
+          </div>
+          <div class="player-container" style="display: flex">
+            <div class="p1-tutor">
+              <p>Người chơi 1 (Trái) </p>
+            <ul>
+              <li><b>W</b> : di chuyển thanh lên trên</li>
+              <li><b>S</b> : di chuyển thanh xuống dưới</li>
+            </ul>
+            </div>
+            <div class="p2-tutor">
+              <p>Người chơi 2 (Phải)</p>
+              <ul>
+                <li><b>Mũi tên lên</b> : di chuyển thanh lên trên</li>
+                <li><b>Mũi tên xuống</b> : di chuyển thanh xuống dưới</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="bot-mod-tut" class="smol-tutorial">
+          <div class= "mode-game" style="width: 100%;">
+            <h3> <ins>Mode Player vs Bot</ins></h3>
+            <p> Ở chế độ này sẽ có 1 người chơi với máy
+              <br>
+              Mục tiêu: ăn được 5 điểm từ đối phương
+            </p>
+          </div>
+          <div class="player-container">
+            <div class="p1-tutor" style="width: 100% !important;">
+              <p>Người chơi (Trái) </p>
+              <ul>
+                <li><b>W</b> : di chuyển thanh lên trên</li>
+                <li><b>S</b> : di chuyển thanh xuống dưới</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="brick-tutorial">
+      <h2>Brick Breaker Game </h2>
+      <div id="smol-brick-container">
+        <div id="player-brick-tut" class="smol-tutorial" style="width: 100% !important;">
+          <div class= "mode-game" >
+            <h3> <ins>Mode Player vs Player</ins></h3>
+            <p> Ở chế độ này sẽ có 1 người chơi với những viên gạch ở trên
+              <br>
+              Mục tiêu: ăn được 40 điểm (gạch)
+              <br>
+              Người chơi sẽ có 3 mạng (Nếu hết mạng => Thua cuộc)
+            </p>
+          </div>
+          <div class="player-container">
+            <div class="p1-tutor">
+              <p>Người chơi 1 (Trái) </p>
+              <ul>
+                <li><b>A</b> : di chuyển thanh lên trên</li>
+                <li><b>D</b> : di chuyển thanh xuống dưới</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="exit-tutorial"> Thoát </button>
+  </div>
+</div>
+</body>
+<script src="game.js"></script>
+</html>
