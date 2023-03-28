@@ -20,6 +20,13 @@
     top: 15%;
 }
 /*START BUTTON*/
+#btn-container{
+    width: 25%;
+    height: auto;
+    position: absolute;
+    left: 36%;
+    top: 37%;
+}
 #player-btn {
     position: relative;
     font-size: 1.5rem;
@@ -29,8 +36,7 @@
     color: #fff;
     border: none;
     cursor: pointer;
-    left: 37%;
-    top: 18%;
+    margin-bottom: 20px;
 }
 #bot-btn {
     position: relative;
@@ -41,8 +47,7 @@
     color: #fff;
     border: none;
     cursor: pointer;
-    left: 12%;
-    top: 30%;
+    margin-bottom: 20px;
 }
 #brick-btn {
     position: relative;
@@ -53,8 +58,8 @@
     color: #fff;
     border: none;
     cursor: pointer;
-    right: 38%;
-    top: 42%;
+    margin-bottom: 20px;
+
 }
 #game-mode{
     position: relative;
@@ -65,8 +70,8 @@
     color: white;
     border: none;
     cursor: pointer;
-    right: 13%;
-    top: 54%;
+    margin-bottom: 20px;
+
 }
 option{
     color: white;
@@ -81,8 +86,8 @@ option{
     color: #fff;
     border: none;
     cursor: pointer;
-    left: 37%;
-    top: 57%;
+    margin-bottom: 20px;
+
 }
 
 #restart-btn {
