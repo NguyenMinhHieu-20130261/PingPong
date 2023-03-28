@@ -246,7 +246,7 @@
         const S = 83;
         const UP_ARROW = 38;
         const DOWN_ARROW = 40;
-        const PADDLE_MOVE_AMOUNT = 45;
+        const PADDLE_MOVE_AMOUNT = 50;
         if (gameMode === 'player' ) { // Nếu game ở chế độ đấu với người
             switch (event.keyCode) {
                 // key của player 1
@@ -383,9 +383,15 @@
     // LEVEL 5
     // xử lí barricade cho lv5
     function designLv5(){
+        let bx1 = movingBarricade.x - 200;
+        let bx2 = movingBarricade.x + 200;
         let y = movingBarricade.y;
-        movingBarricadeB(y,350,game.width - 350 );
+        movingBarricadeA(bx1, 0 ,game.height);
+        movingBarricadeA(bx2, 0 ,game.height);
+        movingBarricadeB(y,200,game.width - 200 );
         // xử lí va chạm barricade với bóng
+        barricadeCollision(bx1,movingBarricade.y,barricade.height);
+        barricadeCollision(bx2, movingBarricade.y,barricade.height);
         barricadeCollision(movingBarricade.x,y ,barricade.height);
 
     }
