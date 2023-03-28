@@ -69,7 +69,7 @@
     // setup điểm người chơi và điểm thắng
     let player1Score = 0;
     let player2Score = 0;
-    const maxScore = 3; // điểm thắng
+    const maxScore = 5; // điểm thắng
 
     // setup trạng thái ban đầu của game
     let gameStarted = false;
@@ -402,8 +402,8 @@
     }
     let player={
         score : 0,
-        live : 3,
-        winning  : 30,
+        live : 4,
+        winning  : 40,
         win: false
     }
     // setup giá trị cho  gạch
